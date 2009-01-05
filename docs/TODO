@@ -1,0 +1,4 @@
+- Make start and end rooms definable.
+- Move the maze generating responsibility out of the Maze class and into a new
+  generator class.
+- Throw out-of-range errors on Maze.getRoomAt()

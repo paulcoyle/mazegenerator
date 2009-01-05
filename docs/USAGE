@@ -1,0 +1,16 @@
+To use this code is simple:
+
+  var maze:Maze = new Maze();
+      maze.init(30, 30);
+  trace(maze.toMazeString());
+
+Then, if you want to integrate with B. Korsmit's libriaries, you just need to
+make a searchable proxy to the maze:
+
+  var mazeProxy:AStarMazeProxy = new AStarMazeProxy(maze);
+
+You can then use the proxy to pass into the AStar solver like so:
+
+  var astar:AStar = new AStar(mazeProxy, mazeProxy.getStartPoint(),
+    mazeProxy.getEndPoint());
+  trace(astar.solve());
